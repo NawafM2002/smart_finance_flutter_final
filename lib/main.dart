@@ -1253,7 +1253,7 @@ class _SplashScreenState extends State<SplashScreen> {
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const SmartFinanceApp()),
+         MaterialPageRoute(builder: (context) => const AuthGate()),
         );
       }
     });
