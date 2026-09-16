@@ -2,27 +2,30 @@ name: smart_finance
 description: Smart Finance Banking Evaluation App
 publish_to: 'none'
 version: 1.0.0+1
+
 environment:
   sdk: '>=3.0.0 <4.0.0'
+
 dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.5.3
   local_auth: ^2.3.0
   cupertino_icons: ^1.0.8
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
   flutter_launcher_icons: ^0.13.1
 
-  
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
     - assets/backgrounds/
+
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: assets/images/logo.jpg
+  image_path: "assets/images/logo.jpg"
