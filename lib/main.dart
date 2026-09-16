@@ -659,7 +659,7 @@ class _FinancingPageState extends State<FinancingPage> {
                   ),
                   const SizedBox(height: 14),
                   DropdownButtonFormField<String>(
-                    initialValue: loanDuration,
+                    value: loanDuration,
                     dropdownColor: blue,
                     decoration: const InputDecoration(
                       labelText: 'مدة سداد التمويل',
