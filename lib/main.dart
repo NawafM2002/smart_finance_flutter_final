@@ -45,7 +45,7 @@ class SmartFinanceApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const AuthGate(),
+      home: const SplashScreen(),
     );
   }
 }
@@ -1235,6 +1235,58 @@ class DrawerItem extends StatelessWidget {
         style: const TextStyle(color: Colors.white),
       ),
       onTap: onTap,
+    );
+  }
+}
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const SmartFinanceApp()),
+        );
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      backgroundColor: Color(0xFF071525),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.account_balance, size: 85, color: Colors.white),
+            SizedBox(height: 20),
+            Text(
+              'التقييم الذكي للتمويل البنكي',
+              style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: Text(
+                'منصة ذكية لتقييم المخاطر والجدارة الائتمانية لطلبات التمويل',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white70, fontSize: 14),
+              ),
+            ),
+            SizedBox(height: 35),
+            CircularProgressIndicator(color: Color(0xFF00E5FF)),
+          ],
+        ),
+      ),
     );
   }
 }
